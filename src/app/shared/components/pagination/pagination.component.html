@@ -1,0 +1,49 @@
+@if(totalItems) {
+<nav aria-label="...">
+  <ul class="pagination">
+    <li
+      class="page-item"
+      [ngClass]="{
+        disabled: !hasPreviousPage
+      }"
+    >
+      <button
+        type="button"
+        (click)="onChangePage(pageIndex - 1)"
+        class="page-link"
+      >
+        Previous
+      </button>
+    </li>
+
+    @for (index of pageIndexes; track $index) {
+    <li
+      class="page-item"
+      [ngClass]="{
+        active: pageIndex === index
+      }"
+      aria-current="page"
+    >
+      <button type="button" (click)="onChangePage(index)" class="page-link">
+        {{ index + 1 }}
+      </button>
+    </li>
+    }
+
+    <li
+      class="page-item"
+      [ngClass]="{
+        disabled: !hasNextPage
+      }"
+    >
+      <button
+        type="button"
+        (click)="onChangePage(pageIndex + 1)"
+        class="page-link"
+      >
+        Next
+      </button>
+    </li>
+  </ul>
+</nav>
+}

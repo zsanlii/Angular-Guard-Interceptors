@@ -1,0 +1,18 @@
+<!-- <ul>
+  @for (category of categoryList; track $index) {
+  <li >
+    {{ category.name }}
+  </li>
+  }
+</ul> -->
+
+@if (categoryList) {
+<app-list-group
+  [initialSelectedItemId]="initialSelectedCategoryId?.toString() ?? null"
+  [items]="categoryListGroupItems"
+  (changeSelect)="onChangeSelect($event)"
+></app-list-group>
+}
+
+<button class="btn btn-primary btn-lg mt-4" (click)="onButtonClick()">Form</button>
+<!-- $event: @Output ile gelen veriyi temsil eder. -->

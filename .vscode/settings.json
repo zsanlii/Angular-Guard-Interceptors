@@ -1,0 +1,12 @@
+{
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "externalTemplate": true,
+            "inlineStyle": false,
+            "style": "scss"
+        },
+        "angular-component": {
+            "skipDisplayBlock": true
+        }
+    }
+}

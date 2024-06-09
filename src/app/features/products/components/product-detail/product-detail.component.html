@@ -1,0 +1,25 @@
+@if (!productDetails) {
+<div class="alert alert-danger" role="alert">Product not found!</div>
+} @else {
+<div class="row">
+  <div class="col">
+    <img
+      [src]="productDetails.imageUrl"
+      [alt]="productDetails.name"
+      class="img-fluid rounded"
+    />
+  </div>
+
+  <div class="col">
+    <h1>{{ productDetails.name }}</h1>
+
+    <p>{{ productDetails.quantityPerUnit }}</p>
+
+    <p appHighlight="red" hoverColor="blue" class="display-6">{{ productDetails.unitPrice | appVat | currency }}</p>
+
+    <button class="btn btn-primary btn-lg mt-4" (click)="onButtonClick()">
+      Add to Cart
+    </button>
+  </div>
+</div>
+}

@@ -1,0 +1,28 @@
+<form [formGroup]="formGroup" (submit)="onFormSubmit()">
+  <div>
+    <label>Name: </label>
+    <input type="text" formControlName="name" />
+    <!-- ngModel: basit olarak bir girdi alanını bir state'e bağlayarak, değerin iki yönlü olarak atanmasını sağlar.  -->
+  </div>
+
+  <div>
+    <label>Description: </label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <button type="submit">Add</button>
+</form>
+
+<!-- FormsModule -->
+<!-- <div>
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="nameInputValue" /> -->
+
+<!-- ngModel: basit olarak bir girdi alanını bir state'e bağlayarak, değerin iki yönlü olarak atanmasını sağlar.  -->
+
+<!-- </div>
+<div>
+  <label>Description: </label>
+  <textarea [(ngModel)]="descriptionInputValue"></textarea>
+</div>
+<button type="button" (click)="onFormSubmit()">Add</button> -->
